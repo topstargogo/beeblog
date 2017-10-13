@@ -48,7 +48,7 @@ func (c *UserController) Pageinfo(){
 	c.Data["IsCategory"] = true
 	c.Data["hobby"] = []string{"code","book"}
 	c.Prepare()
-	c.TplName = "Category.html"
+	c.TplName = "Pageinfo.html"
 
 }
 

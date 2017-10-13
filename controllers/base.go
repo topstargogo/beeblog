@@ -29,12 +29,12 @@ func (c *BaseController) Prepare() {
 
 	if c.IsLogin() {
 		
-		c.Data["username"] = c.GetSession("username")
+		c.Data["logincheck"] = c.GetSession("logincheck")
 	}
 }
 func (c *BaseController) DoLogin() {
 	loginname := c.GetString("loginname")
-	c.SetSession("username", loginname)
+	c.SetSession("logincheck", loginname)
 }
 
 func (c *BaseController) DoLogout() {
@@ -43,7 +43,7 @@ func (c *BaseController) DoLogout() {
 }
 
 func (c *BaseController) IsLogin() bool {
-	return c.GetSession("username") != nil
+	return c.GetSession("logincheck") != nil
 }
 
 func (c *BaseController) CheckLogin() {

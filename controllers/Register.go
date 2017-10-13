@@ -42,10 +42,10 @@ func (c *UserController) Register() {
     
 	switch {
 
-	case valid.HasErrors():
-	c.Ctx.WriteString("电话不能为空")
-    return
-	case pwd != pwd1:
+	    case valid.HasErrors():
+	    c.Ctx.WriteString("电话不能为空")
+        return
+	    case pwd != pwd1:
 		valid.Error("两次密码不一致")
 		c.Ctx.WriteString("两次密码不一致")
         return
@@ -57,7 +57,7 @@ func (c *UserController) Register() {
 			Mobile:    mb,
 		} 
 
-		switch {
+	switch {
 		case u.ExistUsername():
 			valid.Error("用户名被占用")
 			c.Ctx.WriteString("用户名被占用")
@@ -66,7 +66,7 @@ func (c *UserController) Register() {
 			valid.Error("邮箱被占用")
 			c.Ctx.WriteString("邮箱被占用")
             return
-		default:
+	default:
 			err := u.Create()
 			if err == nil {
 				c.Ctx.WriteString("创建成功")

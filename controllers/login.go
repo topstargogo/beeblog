@@ -84,7 +84,11 @@ func (c *LoginController) Login(){
 			default: 
 				c.DoLogin()
 				c.Prepare()
-				c.TplName = "home.html"
+				c.TplName = "login.html"
+
+
+			
+
 
 		
 			}

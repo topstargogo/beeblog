@@ -7,11 +7,11 @@
       <li class="navbar-brand" href="#">我的博客</a>
         <li{{if .IsHome}} class="active" {{end}}><a href="/">首页</a></li>
       <li{{if .IsCategory}} class="active" {{end}}><a href="/category">分类</a></li>
-        {{if .username}}
-        <li class="dropdown" style="position:absolute; left:1000px;">
+        {{if .logincheck}}
+        <li class="dropdown" style="    float: right!important;">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="/setting">个人设置</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="/logout">登出</a></li>
 
@@ -71,7 +71,6 @@
 </div>
 
 
-{{.email}}
 <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript">
